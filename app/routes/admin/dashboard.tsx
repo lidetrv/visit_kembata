@@ -1,6 +1,17 @@
+import { Header } from "components"
+
 const dashboard = () => {
+  const user = {
+    name: "Mase"
+  }
   return (
-    <div>Dashboard Page</div>
+    <main className="dashboard wrapper">
+        <Header 
+        title={`Welcome ${user?.name ?? 'Guest'} 👋`}
+        description="Track and Manage created posts in real time."
+        />
+        Dashboard contents
+    </main>
   )
 }
 
