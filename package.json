@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-router/node": "^7.7.1",
     "@react-router/serve": "^7.7.1",
+    "@supabase/supabase-js": "^2.56.1",
     "@syncfusion/ej2-base": "^30.2.6",
     "@syncfusion/ej2-react-buttons": "^30.2.4",
     "@syncfusion/ej2-react-charts": "^30.2.7",
@@ -19,10 +20,11 @@
     "@syncfusion/ej2-react-maps": "^30.2.4",
     "@syncfusion/ej2-react-navigations": "^30.2.7",
     "@syncfusion/ej2-react-splitbuttons": "^30.2.4",
-    "appwrite": "^19.0.0",
+    "appwrite": "^18.2.0",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.14",
     "isbot": "^5.1.27",
+    "node-appwrite": "^18.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router": "^7.7.1",
@@ -37,6 +39,7 @@
     "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3",
     "vite": "^6.3.3",
+    "vite-plugin-commonjs": "^0.10.4",
     "vite-tsconfig-paths": "^5.1.4"
   }
 }

@@ -1,20 +1,21 @@
-import { Account, Client, Databases, Storage } from "appwrite"
-const sdk = require('node-appwrite')
-export const appwriteConfig = {
+import {Account, Client, Databases, Storage} from 'appwrite'
+
+export const appwriteConfig={
     endpoint: import.meta.env.VITE_APPWRITE_API_ENDPOINT,
     projectId: import.meta.env.VITE_APPWRITE_PROJECT_ID,
-    apiKey: import.meta.env.VITE_APPWRITE_API_KEY,
+    apikey: import.meta.env.VITE_APPWRITE_API_KEY,
     databaseId: import.meta.env.VITE_APPWRITE_DATABASE_ID,
-    userCollectionId: import.meta.env.VITE_APPWRITE_USERS_TABLE_ID,
-    postCollectionId: import.meta.env.VITE_APPWRITE_POSTS_TABLE_ID,
+    userCollectionId: import.meta.env.VITE_APPWRITE_USERS_COLLECTION_ID,
+    tripCollectionId: import.meta.env.VITE_APPWRITE_TRIPS_COLLECTION_ID
 }
 
-const client = new sdk.Client()
-    .setEndpoint(appwriteConfig.endpoint)
-    .setProject(appwriteConfig.projectId)
+const client = new Client()
+     .setEndpoint(appwriteConfig.endpoint)
+     .setProject(appwriteConfig.projectId)
 
-const account = new sdk.Account(client);
-const database = new sdk.Databases(client);
-const storage = new sdk.Storage(client);
 
-export {client, account, database,storage}
+const account = new Account(client);
+const database = new Databases(client);
+const storage = new Storage(client);
+
+export {client, account, database,storage};
