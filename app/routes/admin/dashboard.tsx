@@ -1,8 +1,15 @@
 import { Header, PostCard, StatsCard } from "components"
-import { dashboardStats,user,allTrips } from "~/constants"
-const dashboard = () => {
+import { getUser } from "~/appwrite/auth";
+import { dashboardStats,allTrips } from "~/constants"
+import type { Route } from "./+types/dashboard";
 
-  const {totalUsers, usersJoined, totalPosts, postsCreated, userRole} = dashboardStats;
+const {totalUsers, usersJoined, totalPosts, postsCreated, userRole} = dashboardStats;
+
+export const clientLoader = async () => await getUser();
+const dashboard = ({loaderData}: Route.ComponentProps) => {
+
+  const user = loaderData as User | null;
+
   return (
     <main className="dashboard wrapper">
         <Header 

@@ -40,7 +40,7 @@ const hanldeLogout = () =>{
                     <h2>{user?.name}</h2>
                     <p>{user?.email}</p>
                 </article>
-                <button className="cursor-pointer" onClick={() => hanldeLogout}>
+                <button className="cursor-pointer" onClick={hanldeLogout}>
                     <img 
                     src="/assets/icons/logout.svg"
                     alt="log out"
