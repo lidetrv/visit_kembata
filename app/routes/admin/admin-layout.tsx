@@ -7,35 +7,33 @@ import { getExistingUser, storeUserData } from '~/appwrite/auth';
 export async function clientLoader() {
     try{
         const user = await account.get();
-        if(!user.$id) return redirect('/sign-in');
 
+        if(!user.$id) return redirect('/sign-in')
+        
         const existingUser = await getExistingUser(user.$id);
-        if(existingUser?.status ==='user'){ 
+        
+        if(existingUser?.status ==='user'){
           return redirect('/');
         }
-        if(existingUser?.status ==='admin'){
-            redirect('/dashboard');
-        }
-        // Experimental
-        // if(!existingUser) return redirect('/sign-in');
 
         return existingUser?.$id ? existingUser : await storeUserData();
-    } catch(e){
-        console.error("Error in clientLoader:", e);
-        redirect('sign-in');
+    }catch(e){
+        console.log('Error in client Loader', e)
+        return redirect('/sign-in');
     }
 }
+
 
 const AdminLayout = () => {
   return (
     <div className='admin-layout'>
         <MobileSidebar/>
-        <aside className='w-full max-w-[270px] hidden lg:block'>
+        <aside className='w-full max-w-[270] hidden lg:block'>
             <SidebarComponent width={270} enableGestures={false}>
                 <NavItems/>
             </SidebarComponent>
         </aside>
-        <aside>
+        <aside className='children'>
             <Outlet/>
         </aside>
     </div>
