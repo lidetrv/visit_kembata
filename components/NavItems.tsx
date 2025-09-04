@@ -7,8 +7,9 @@ const NavItems = ({handleClick}:{handleClick?: () => void}) => {
 const user = useLoaderData();
 const navigate = useNavigate();
 const hanldeLogout = () =>{
-    navigate('/sign-in');
-}
+        navigate('/sign-in')
+    }
+
 
   return (
     <section className="nav-items">
@@ -49,6 +50,6 @@ const hanldeLogout = () =>{
         </div>
     </section>
   )
-}
 
+}
 export default NavItems

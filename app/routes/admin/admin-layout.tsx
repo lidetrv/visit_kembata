@@ -17,7 +17,7 @@ export async function clientLoader() {
             redirect('/dashboard');
         }
         // Experimental
-        if(!existingUser) return redirect('/sign-in');
+        // if(!existingUser) return redirect('/sign-in');
 
         return existingUser?.$id ? existingUser : await storeUserData();
     } catch(e){
