@@ -4,8 +4,15 @@ import { CreatePostSchema } from "~/lib/validations"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "~/components/ui/form"
 import { Input } from "~/components/ui/input"
 import { Button } from "~/components/ui/button"
+import Editor from "./editor"
+import { useRef } from "react"
+import type { MDXEditorMethods } from "@mdxeditor/editor"
+
 
 const PostForm = () => {
+
+    const editorRef = useRef<MDXEditorMethods>(null)
+
     const form = useForm({
         resolver: zodResolver(CreatePostSchema),
         defaultValues: {
@@ -18,16 +25,16 @@ const PostForm = () => {
     });
 
     const handleCreatePost = async () => {
-  
+        
     }
 
   return (
         <Form {...form}>
-            <form className="flex w-full flex-col gap-10 trip-form" onSubmit={form.handleSubmit(handleCreatePost)}>
+            <form className="flex w-full flex-col gap-10" onSubmit={form.handleSubmit(handleCreatePost)}>
                 <FormField
                 control={form.control}
                 name="title"
-                render={(field) => (
+                render={({field}) => (
                     <FormItem className="flex w-full flex-col">
                         <FormLabel className="paragraph-semibold text-dark-100">
                             <span className="text-dark-100 font-bold p-16-semibold">Title</span> <span className="text-red-700">*</span>
@@ -45,7 +52,7 @@ const PostForm = () => {
                 <FormField
                 control={form.control}
                 name="subTitle"
-                render={(field) => (
+                render={({field}) => (
                     <FormItem className="flex w-full flex-col">
                         <FormLabel className="paragraph-semibold text-dark-100">
                             <span className="text-dark-100 font-bold p-16-semibold">Sub Title</span> <span className="text-red-700">*</span>
@@ -63,10 +70,10 @@ const PostForm = () => {
                 <FormField
                 control={form.control}
                 name="miniSubTitle"
-                render={(field) => (
+                render={({field}) => (
                     <FormItem className="flex w-full flex-col">
                         <FormLabel className="paragraph-semibold text-dark-100">
-                            <span className="text-dark-100 font-bold p-16-semibold">Title Description</span> <span className="text-red-700">*</span>
+                            <span className="text-dark-100 p-16-semibold text-sm font-semibold sm:text-sm">Title Description</span> <span className="text-red-700">*</span>
                         </FormLabel>
                         <FormControl>
                             <Input className="paragraph-regular text-dark-100 no-focus min-h-[56px] rounded-1.5 border font-bold text-3xl" 
@@ -81,13 +88,13 @@ const PostForm = () => {
                 <FormField
                 control={form.control}
                 name="content"
-                render={(field) => (
+                render={({field}) => (
                     <FormItem className="flex w-full flex-col">
                         <FormLabel className="paragraph-semibold text-dark-100">
-                            <span className="text-dark-100 font-bold p-16-semibold">Content</span> <span className="text-red-700">*</span>
+                            <span className="text-dark-100 font-semibold p-16-semibold text-sm">Content</span> <span className="text-red-700">*</span>
                         </FormLabel>
                         <FormControl>
-                            Editor
+                           <Editor editorRef={editorRef} value={field.value} fieldChange={field.onChange}/>
                         </FormControl>
                         <FormDescription className="text-sm text-gray-100 mt-2.5">
                             Write detailed explanation of the body or content of your post.
@@ -98,14 +105,14 @@ const PostForm = () => {
                 <FormField
                 control={form.control}
                 name="tags"
-                render={(field) => (
+                render={({field}) => (
                     <FormItem className="flex w-full flex-col gap-3">
                         <FormLabel className="paragraph-semibold text-dark-100">
                             <span className="text-dark-100 font-bold p-16-semibold">Tags</span> <span className="text-red-700">*</span>
                         </FormLabel>
                         <FormControl>
                             <div>
-                                <Input className="paragraph-regular text-dark-100 no-focus min-h-[56px] rounded-1.5 border font-bold text-3xl" 
+                                <Input className="paragraph-regular text-dark-100 min-h-[56px] rounded-1.5 border font-semibold text-sm sm:text-sm" 
                             {...field} placeholder="Add Tags..."/>
                             Tags
                             </div>
@@ -117,7 +124,7 @@ const PostForm = () => {
                     </FormItem>
                 )}/>
                 <div className="mt-16 flex justify-end">
-                    <Button type="submit" className=" w-fit button-class !h-11 md:w-[240px]">
+                    <Button type="submit" className=" !w-full sm:w-[240px] button-class !h-11 !md:w-[240px]">
                         Post
                     </Button>
                 </div>

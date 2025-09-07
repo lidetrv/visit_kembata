@@ -1,0 +1,61 @@
+/*
+ * This file overrides common CSS resets that may affect the MDXEditor.
+ * Place this file in your project and import it after the MDXEditor's default styles.
+ */
+
+/* ================== LISTS ================== */
+.MDXEditor ul {
+  list-style-type: disc !important;
+  padding-left: 2em !important;
+}
+
+.MDXEditor ol {
+  list-style-type: decimal !important;
+  padding-left: 2em !important;
+}
+
+/* ================== HEADINGS ================== */
+.MDXEditor h1,
+.MDXEditor h2,
+.MDXEditor h3,
+.MDXEditor h4,
+.MDXEditor h5,
+.MDXEditor h6 {
+  font-weight: bold !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.MDXEditor h1 {
+  font-size: 2em !important;
+}
+
+.MDXEditor h2 {
+  font-size: 1.5em !important;
+}
+
+.MDXEditor h3 {
+  font-size: 1.17em !important;
+}
+
+.MDXEditor h4 {
+  font-size: 1em !important;
+}
+
+.MDXEditor h5 {
+  font-size: 0.83em !important;
+}
+
+.MDXEditor h6 {
+  font-size: 0.67em !important;
+}
+
+/* ================== QUOTES ================== */
+.MDXEditor blockquote {
+  border-left: 4px solid #15803d !important;
+  color: #666 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 1em !important;
+  font-style: italic !important;
+}

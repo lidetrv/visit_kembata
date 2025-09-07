@@ -7,7 +7,7 @@ const CreatePost = () => {
         <Header
         title="Add a New Post"
         description="View and edit posts"/>
-        <section className="mt-2.5 wrapper-md">
+        <section>
           <div className="mt-4">
             <PostForm/>
           </div>

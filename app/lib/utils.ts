@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import dayjs from "dayjs";
+import type { toLowerCase } from "zod";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -68,3 +69,22 @@ export const formatKey = (key: keyof TripFormData) => {
     .replace(/([A-Z])/g, " $1")
     .replace(/^./, (str) => str.toUpperCase());
 };
+
+export const getTagIcons = (tagname: string) => {
+  const normalizedTagName = tagname.replace(/[ .]/g,"").toLowerCase();
+
+  const tagMap = {
+    hambericho: "/assets/icons/hambericho777.png",
+    777 : "/assets/icons/hambericho777.png",
+    ajora: "/assets/icons/agora.png",
+    memories: "/assets/icons/memories.svg",
+    visitkembata: "/assets/icons/visitkembata.png",
+    kembata: "/assets/icons/visitkembata.png",
+    tourism: "/assets/icons/visitkembata.png",
+    visit: "/assets/icons/memories.png",
+    capture: "/assets/icons/capture.png",
+    waterfall: "/assets/icons/ajora.png",
+    mountain: "/assets/icons/hambericho777.png"
+  }
+}
+
