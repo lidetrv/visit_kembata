@@ -7,6 +7,11 @@ import { Button } from "~/components/ui/button"
 import Editor from "./editor"
 import { useRef } from "react"
 import type { MDXEditorMethods } from "@mdxeditor/editor"
+import type { Z } from "node_modules/react-router/dist/development/context-jKip1TFB.mjs"
+import { ChipDirective, ChipListComponent, ChipsDirective } from "@syncfusion/ej2-react-buttons"
+import { cn, getFirstWord, getTagIcons } from "~/lib/utils"
+import { index } from "@react-router/dev/routes"
+import type z from "zod"
 
 
 const PostForm = () => {
@@ -24,9 +29,54 @@ const PostForm = () => {
         }
     });
 
-    const handleCreatePost = async () => {
-        
+
+    const handleInputKeyDown = (e : React.KeyboardEvent<HTMLInputElement> , field: {value: string[]}) =>{
+        if(e.key === 'Enter'){
+            e.preventDefault()
+            const tagInput = e.currentTarget.value.trim();
+            const iconClass = getTagIcons(tagInput);
+
+            if(tagInput && tagInput.length < 15 && !field.value.includes(tagInput)){
+                form.setValue("tags",[...field.value, tagInput]);
+                e.currentTarget.value ="";
+                form.clearErrors("tags");
+            } else if(field.value.includes(tagInput)){
+                form.setError('tags',{
+                    type: "manual",
+                    message: "Tag already exists"
+                })
+            }
+        }
     }
+
+    const handleCreatePost = async (data: z.infer<typeof CreatePostSchema>) => {
+        console.log(data)
+    }
+    const handleTagRemove = (e: any) => {
+        // e.data.text contains the text of the deleted chip.
+        // The Syncfusion event object for a deletion on a list of strings
+        // provides the text property.
+        const deletedTagText = e.data.text;
+        
+        // Get the current tags array from the form's state
+        const currentTags = form.getValues("tags");
+        
+        // Filter out the deleted tag
+        const updatedTags = currentTags.filter(tag => tag !== deletedTagText);
+        
+        // Update the form's state with the new array
+        form.setValue("tags", updatedTags, { shouldDirty: true });
+    };
+    // const handleTagRemove = (tag: string, field:{value: string[]}) => {
+    //     const newTags = field.value.filter((t) => t !== tag);
+    //     form.setValue("tags", newTags);
+    //     if(newTags.length === 0){
+    //         form.setError("tags",{
+    //             type: "manual",
+    //             message: "Tags are required!"
+    //         });
+    //     }
+    // }
 
   return (
         <Form {...form}>
@@ -43,7 +93,7 @@ const PostForm = () => {
                             <Input className="paragraph-regular text-dark-100 no-focus min-h-[56px] rounded-1.5 border font-bold text-3xl" 
                             {...field}/>
                         </FormControl>
-                        <FormDescription className="text-sm text-gray-100 mt-2.5">
+                        <FormDescription className="text-gray-100 mt-2.5">
                             Write the main title for your post, which is shown at the top of your post.
                         </FormDescription>
                         <FormMessage/>
@@ -55,13 +105,13 @@ const PostForm = () => {
                 render={({field}) => (
                     <FormItem className="flex w-full flex-col">
                         <FormLabel className="paragraph-semibold text-dark-100">
-                            <span className="text-dark-100 font-bold p-16-semibold">Sub Title</span> <span className="text-red-700">*</span>
+                            <span className="lg:text-dark-100 font-bold p-16-semibold" text-sm>Sub Title</span> <span className="text-red-700">*</span>
                         </FormLabel>
                         <FormControl>
                             <Input className="paragraph-regular text-dark-100 no-focus min-h-[56px] rounded-1.5 border font-bold text-3xl" 
                             {...field}/>
                         </FormControl>
-                        <FormDescription className="text-sm text-gray-100 mt-2.5">
+                        <FormDescription className="text-sm text-gray-100 mt-2.5 sm:text-xs">
                             Write Sub Title title for your post.
                         </FormDescription>
                         <FormMessage/>
@@ -79,7 +129,7 @@ const PostForm = () => {
                             <Input className="paragraph-regular text-dark-100 no-focus min-h-[56px] rounded-1.5 border font-bold text-3xl" 
                             {...field}/>
                         </FormControl>
-                        <FormDescription className="text-sm text-gray-100 mt-2.5">
+                        <FormDescription className="text-sm text-gray-100 mt-2.5 sm:text-xs">
                             Write short description for your post. For example: Adventureous Hiking to Mount Hambericho-777
                         </FormDescription>
                         <FormMessage/>
@@ -111,10 +161,27 @@ const PostForm = () => {
                             <span className="text-dark-100 font-bold p-16-semibold">Tags</span> <span className="text-red-700">*</span>
                         </FormLabel>
                         <FormControl>
-                            <div>
+                            <div> 
                                 <Input className="paragraph-regular text-dark-100 min-h-[56px] rounded-1.5 border font-semibold text-sm sm:text-sm" 
-                            {...field} placeholder="Add Tags..."/>
-                            Tags
+                             placeholder="Add Tags..."
+                            onKeyDown={(e) => handleInputKeyDown(e,field)}/>
+                            {field.value.length > 0 && (
+                                <div className="flex-start mt-2.5 flex-wrap gap-2.5">
+                                    <ChipListComponent 
+                                    id='travel-chip'
+                                    enableDelete={true}
+                                    deleted={handleTagRemove}>
+                                                    <ChipsDirective>
+                                                        {field?.value?.map((tag: string,index) => (
+                                                        <ChipDirective key={index}
+                                                            trailingIconCss="e-dlt-btn"
+                                                            text={getFirstWord(tag)}
+                                                            cssClass={cn('iconClass',index === 1 ? '!bg-pink-50 !text-pink-500 !font-medium':'!bg-success-50 !text-success-700 !font-medium' )}/>    
+                                                            ))}
+                                                    </ChipsDirective>
+                                                </ChipListComponent>
+                                </div>
+                            )}
                             </div>
                         </FormControl>
                         <FormDescription className="text-sm text-gray-100 mt-2.5">
@@ -124,7 +191,7 @@ const PostForm = () => {
                     </FormItem>
                 )}/>
                 <div className="mt-16 flex justify-end">
-                    <Button type="submit" className=" !w-full sm:w-[240px] button-class !h-11 !md:w-[240px]">
+                    <Button type="submit" className=" !w-full sm:w-[240px] button-class !h-11 !md:w-[240px] cursor-pointer">
                         Post
                     </Button>
                 </div>

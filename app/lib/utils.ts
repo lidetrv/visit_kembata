@@ -73,7 +73,7 @@ export const formatKey = (key: keyof TripFormData) => {
 export const getTagIcons = (tagname: string) => {
   const normalizedTagName = tagname.replace(/[ .]/g,"").toLowerCase();
 
-  const tagMap = {
+  const tagMap:{[key: string]: string} = {
     hambericho: "/assets/icons/hambericho777.png",
     777 : "/assets/icons/hambericho777.png",
     ajora: "/assets/icons/agora.png",
@@ -86,5 +86,7 @@ export const getTagIcons = (tagname: string) => {
     waterfall: "/assets/icons/ajora.png",
     mountain: "/assets/icons/hambericho777.png"
   }
+
+  return tagMap[normalizedTagName] ?  `${tagMap[normalizedTagName]}` : "/assets/icons/visitkembata.png"
 }
 

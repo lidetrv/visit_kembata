@@ -479,6 +479,14 @@ body {
   scroll-behavior: smooth;
 }
 
+.my-avatar-icon {
+        background-image: url('/assets/icons/visitkembata.png');
+        background-size: cover;
+        width: 28px; /* Adjust size as needed */
+        height: 28px; /* Adjust size as needed */
+        border-radius: 50%; /* For a circular avatar */
+    }
+
 .glassmorphism {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(2px);
