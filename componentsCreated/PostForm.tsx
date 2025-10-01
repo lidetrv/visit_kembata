@@ -12,9 +12,15 @@ import { ChipDirective, ChipListComponent, ChipsDirective } from "@syncfusion/ej
 import { cn, getFirstWord, getTagIcons } from "~/lib/utils"
 import { index } from "@react-router/dev/routes"
 import type z from "zod"
+import { appwriteConfig, tablesDB } from "~/appwrite/client"
+import { ID } from "appwrite"
+import postDetail from "~/routes/admin/post-detail"
+import { useNavigate } from "react-router"
+import { created } from "@syncfusion/ej2-react-grids"
 
 
 const PostForm = () => {
+    const navigate = useNavigate();
 
     const editorRef = useRef<MDXEditorMethods>(null)
 
@@ -50,7 +56,61 @@ const PostForm = () => {
     }
 
     const handleCreatePost = async (data: z.infer<typeof CreatePostSchema>) => {
-        console.log(data)
+
+        try {
+            const payload = {
+                    postDetails: data.content,
+                    imageUrls: data.tags,
+                    tags: data.tags,
+                    title: data.title,
+                    subTitle: data.subTitle,
+                    titleDescription: data.miniSubTitle,
+                    createdAt: new Date().toISOString(),
+                    };
+            // Post the data to Appwrite
+            const response = await tablesDB.createRow({
+                databaseId: appwriteConfig.databaseId,
+                tableId: appwriteConfig.tripCollectionId,
+                rowId: ID.unique(), // Use a unique ID for the new document
+                data: {
+                    postDetails: JSON.stringify(payload),
+                    // imageUrls: JSON.stringify(payload.tags),
+                    // tags: JSON.stringify(payload.tags),
+                    // title: JSON.stringify(payload.title),
+                    // subTitle: JSON.stringify(payload.subTitle),
+                    // titleDescription: JSON.stringify(payload.titleDescription),
+                    // $createdAt: new Date().toISOString(),
+                    
+                } // The validated data from the form
+        });
+
+            // const response = await fetch('/api/create-post', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({
+            //         postDetails: data.content,
+            //         title: data.title,
+            //         subTitle: data.subTitle,
+            //         tags: data.tags,
+            //         titleDescription: data.miniSubTitle,
+            // })}) ;
+            
+            // const result: CreateTripResponse = await response.json();
+            // if(result?.id) navigate('/posts/${result.id}');
+            // else console.error('Failed to get post ID from response');
+            
+            console.log('Post created successfully:', response);
+            // Optional: Reset the form or show a success message
+            form.reset();
+            alert('Post created successfully!');
+
+        } catch (error) {
+            console.error('Error creating post:', error);
+            // Optional: Show an error message to the user
+            alert('Failed to create post. Please try again.');
+        }
     }
     const handleTagRemove = (e: any) => {
         // e.data.text contains the text of the deleted chip.

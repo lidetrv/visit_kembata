@@ -27,16 +27,34 @@ export function parseMarkdownToJson(markdownText: string): unknown | null {
   return null;
 }
 
-export function parseTripData(jsonString: string): Trip | null {
-  try {
-    const data: Trip = JSON.parse(jsonString);
+// export function parseTripData(jsonString: string): Post | null {
+//   try {
+//     const data: Post = JSON.parse(jsonString);
 
-    return data;
-  } catch (error) {
-    console.error("Failed to parse trip data:", error);
-    return null;
+
+//     return data;
+//   } catch (error) {
+//     console.error("Failed to parse trip data:", error);
+//     return null;
+//   }
+// }
+
+export const parseTripData = (row: any) => {
+  if (!row) return null;
+
+  try {
+    // parse the JSON string stored in row.postDetails
+    const parsed = JSON.parse(row.postDetails || "{}");
+    return {
+      id: row.$id,
+      createdAt: row.$createdAt,
+      ...parsed,
+    };
+  } catch (err) {
+    console.error("Failed to parse row.postDetails:", err);
+    return { id: row.$id, postDetails: "" };
   }
-}
+};
 
 export function getFirstWord(input: string = ""): string {
   return input.trim().split(/\s+/)[0] || "";
@@ -89,4 +107,54 @@ export const getTagIcons = (tagname: string) => {
 
   return tagMap[normalizedTagName] ?  `${tagMap[normalizedTagName]}` : "/assets/icons/visitkembata.png"
 }
+
+export const formatDateCgt = (isoString: string, locale: string = "en-US") => {
+  if (!isoString) return "";
+
+  try {
+    const date = new Date(isoString);
+    return new Intl.DateTimeFormat(locale, {
+      year: "numeric",
+      month: "long",   // "September"
+      day: "numeric",  // "30"
+      hour: "2-digit",
+      minute: "2-digit",
+    }).format(date);
+  } catch (err) {
+    console.error("Invalid date string:", isoString, err);
+    return isoString;
+  }
+};
+
+// ~/lib/utils.ts
+export const timeAgo = (isoString: string, locale: string = "en-US") => {
+  if (!isoString) return "";
+
+  const now = new Date();
+  const past = new Date(isoString);
+
+  const diffInSeconds = Math.floor((past.getTime() - now.getTime()) / 1000);
+
+  const rtf = new Intl.RelativeTimeFormat(locale, { numeric: "auto" });
+
+  const divisions: { amount: number; unit: Intl.RelativeTimeFormatUnit }[] = [
+    { amount: 60, unit: "second" },   // 60 seconds = 1 minute
+    { amount: 60, unit: "minute" },   // 60 minutes = 1 hour
+    { amount: 24, unit: "hour" },     // 24 hours = 1 day
+    { amount: 7, unit: "day" },       // 7 days = 1 week
+    { amount: 4.34524, unit: "week" }, // ~4.3 weeks = 1 month
+    { amount: 12, unit: "month" },    // 12 months = 1 year
+  ];
+
+  let duration = diffInSeconds;
+  for (const division of divisions) {
+    if (Math.abs(duration) < division.amount) {
+      return rtf.format(Math.round(duration), division.unit);
+    }
+    duration /= division.amount;
+  }
+
+  return rtf.format(Math.round(duration), "year");
+};
+
 

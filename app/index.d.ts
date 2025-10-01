@@ -55,24 +55,33 @@ declare interface Location {
   openStreetMap: string;
 }
 
-declare interface Trip {
+declare interface Post {
   id: string;
-  name: string;
-  description: string;
-  estimatedPrice: string;
-  duration: number;
-  budget: string;
-  travelStyle: string;
-  interests: string;
-  groupType: string;
-  country: string;
-  imageUrls: string[];
-  itinerary: DayPlan[];
-  bestTimeToVisit: string[];
-  weatherInfo: string[];
-  location: Location;
-  payment_link: string;
+  postDetails: string;
+  title: string;
+  subTitle: string;
+  titleDescription: string;
+  tags: string[];
 }
+
+// declare interface Trip {
+//   id: string;
+//   name: string;
+//   description: string;
+//   estimatedPrice: string;
+//   duration: number;
+//   budget: string;
+//   travelStyle: string;
+//   interests: string;
+//   groupType: string;
+//   country: string;
+//   imageUrls: string[];
+//   itinerary: DayPlan[];
+//   bestTimeToVisit: string[];
+//   weatherInfo: string[];
+//   location: Location;
+//   payment_link: string;
+// }
 
 declare interface TripCardProps {
   id: string;
