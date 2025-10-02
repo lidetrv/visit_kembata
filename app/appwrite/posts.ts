@@ -5,7 +5,7 @@ export const getAllPosts = async (limit: number, offset: number) => {
         databaseId: appwriteConfig.databaseId,
         tableId: appwriteConfig.tripCollectionId,
         queries: [
-            Query.limit(limit),Query.offset(offset), Query.orderDesc('createdAt')
+            Query.limit(limit),Query.offset(offset), Query.orderDesc('$createdAt')
         ]
     })
 
