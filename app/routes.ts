@@ -8,5 +8,8 @@ export default [
     route('all-users', 'routes/admin/all-users.tsx'),
     route('posts', 'routes/admin/posts.tsx'),
     route('posts/create', 'routes/admin/create-post.tsx'),
-    route('posts/:postId','routes/admin/post-detail.tsx')])
+    route('posts/:postId','routes/admin/post-detail.tsx')]),
+    layout('routes/root/page-layout.tsx',[
+        index('routes/root/Homepage.tsx')
+    ])
 ] satisfies RouteConfig;

@@ -20,7 +20,7 @@ const PostCard = ({id,name,tags,location,price,imageUrl}:TripCardProps) => {
                     {tags.map((tag,index) => (
                         <ChipDirective key={index}
                         text={getFirstWord(tag)}
-                        cssClass={cn(index === 1 ? '!bg-pink-50 !text-pink-500 !font-medium':'!bg-success-50 !text-success-700 !font-medium' )}/>
+                        cssClass={cn(`!text-base !font-medium !px-4 ${index === 0 ? '!bg-pink-50 !text-pink-500': index === 1 ? '!bg-primary-50 !text-primary-500': index === 2 ? '!bg-success-50 !text-success-500': '!bg-amber-50 !text-amber-500'}` )}/>
                     ))}
                 </ChipsDirective>
             </ChipListComponent>

@@ -3,6 +3,8 @@ import { getAllUsers, getUser } from "~/appwrite/auth";
 import type { Route } from "./+types/dashboard";
 import { getUserGrowthPerDay, getUsersAndPostStats } from "~/appwrite/dashboard";
 import { getAllPosts } from "~/appwrite/posts";
+import { Category, ChartComponent, ColumnSeries, DataLabel, Inject, SeriesCollectionDirective, SeriesDirective, SplineAreaSeries, Tooltip } from "@syncfusion/ej2-react-charts";
+import { allTrips, tripXAxis, tripyAxis, userXAxis, useryAxis } from "~/constants";
 
 
 export const clientLoader = async () => {
@@ -73,6 +75,7 @@ const dashboard = ({loaderData}: Route.ComponentProps) => {
           </div>
         </section>
         <section className="container">
+
           <h1 className="text-xl font-semibold text-dark-100">Created Posts</h1>
           <div className="trip-grid">
             {allPosts.slice(0,4).map(({id, title, tags, imageUrls}) => (
@@ -86,6 +89,37 @@ const dashboard = ({loaderData}: Route.ComponentProps) => {
               price={tags?.[0]}/>
             ))}
           </div>
+        </section>
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <ChartComponent
+          id="chart-1"
+          primaryXAxis={userXAxis}
+          primaryYAxis={useryAxis}
+          title="User Growth"
+          tooltip={{ enable: true }}>
+            <Inject services={[ColumnSeries, SplineAreaSeries, Category, DataLabel,Tooltip]} />
+            <SeriesCollectionDirective>
+              <SeriesDirective
+              dataSource={userGrowth}
+              xName="day"
+              yName="count"
+              type="Column"
+              name="Column"
+              columnWidth={0.3}
+              cornerRadius={{topLeft: 10, topRight: 10}}/>
+              <SeriesDirective
+              dataSource={userGrowth}
+              xName="day"
+              yName="count"
+              type="SplineArea"
+              name="Wave"
+              fill="rgba(71,132,238,0.3)"
+              border={{width: 2, color: '#4784EE'}}/>
+            </SeriesCollectionDirective>
+          </ChartComponent>
+        </section>
+        <section className="user-trip wrapper">
+
         </section>
     </main>
   )
