@@ -108,9 +108,9 @@ export default function HomePage() {
 
       {/* About Section */}
       <section className="py-20 px-6 md:px-20 bg-white text-center">
-        <h3 className="text-3xl font-bold mb-6 text-green-700">About AdventureX</h3>
+        <h3 className="text-3xl font-bold mb-6 text-green-700">About Visit Kembata</h3>
         <p className="max-w-3xl mx-auto text-gray-700 leading-relaxed text-lg">
-          AdventureX is your gateway to exploring the world’s most beautiful and remote destinations.
+          Visit Kembata is your gateway to exploring the world’s most beautiful and remote destinations.
           Whether you crave mountain peaks, deep forests, or desert dunes, our mission is to help you
           connect with nature and find your wild side. Embark on journeys that redefine your limits
           and let your spirit roam free.
@@ -157,7 +157,7 @@ export default function HomePage() {
           <FaYoutube className="hover:text-green-300 cursor-pointer transition" />
         </div>
         <p className="text-sm text-green-100">
-          © {new Date().getFullYear()} AdventureX. All rights reserved.
+          © {new Date().getFullYear()} Visit Kembata. All rights reserved.
         </p>
       </footer>
     </div>
