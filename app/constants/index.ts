@@ -22,6 +22,33 @@ export const sidebarItems = [
   },
 ];
 
+export const homeSidebarItems = [
+  {
+    id: 5,
+    icon: "/assets/icons/home.svg",
+    label: "Home",
+    href: "/",
+  },
+  {
+    id: 6,
+    icon: "/assets/icons/users.svg",
+    label: "Blog",
+    href: "/blog",
+  },
+  {
+    id: 7,
+    icon: "/assets/icons/itinerary.svg",
+    label: "Explore",
+    href: "/explore",
+  },
+  {
+    id: 8,
+    icon: "/assets/icons/itinerary.svg",
+    label: "About",
+    href: "/about",
+  },
+];
+
 export const chartOneData: object[] = [
   {
     x: "Jan",

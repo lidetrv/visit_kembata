@@ -41,6 +41,10 @@
   --color-red-50: #fff4ed;
   --color-red-100: #ff543d;
 
+  --color-dark-bg: #0A0B1A;
+  --color-accent-blue: #00FFFF;
+  --color-accent-purple: #8B5CF6;
+
   --background-image-auth: url("/assets/images/auth_background.jpg");
   --background-image-hero: url("/assets/images/hero-img.png");
   --background-image-card-1: url("/assets/images/card-img-1.png");
