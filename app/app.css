@@ -9,6 +9,19 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import "tailwindcss";
+
+/* Enable hover on mobile */
+@custom-variant hover (&:hover);
+
+/* Theme configuration */
+@theme {
+  /* Fonts */
+  --default-font-family: "Inter";
+
+  /* ... */
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {
