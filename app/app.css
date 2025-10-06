@@ -510,6 +510,11 @@ body {
   -webkit-backdrop-filter: blur(2px);
 }
 
+.footer-color{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
 /* ======== css overrides for syncfusion ========= */
 .e-grid,
 .e-table {
