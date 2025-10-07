@@ -105,18 +105,155 @@ export default function HomePage() {
         <div className="flex items-center justify-start mx-8 font-bold">
           <article>
            <h1 className="text-green-500 text-3xl lg:text-9xl font-bold my-10">Visit Kembata</h1>
-           <p className="font-semibold text-green-400 text-xl">Find your way!</p>
+           <p className="font-semibold text-purple-400 bg-purple-200 px-10 py-4 w-sm rounded-2xl text-xl">Where Culture Meets Nature.</p>
           </article>
           <div>
             
           </div> 
         </div>
       </section>
+      <section className="flex justify-center items-center my-10 gap-6 flex-wrap mx-4">
+        <a
+  href="javascript:void(0)"
+  className="group relative mx-auto flex w-full max-w-xs flex-col transition duration-125 active:opacity-75"
+>
+
+  <div
+    className="absolute inset-0 origin-bottom -rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:-translate-x-1 group-hover:-rotate-12"
+  >
+    <div className="p-4">
+      <img
+        src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Mountain Image 1"
+        className="aspect-4/3 w-full rounded-lg object-cover"
+      />
+    </div>
+  </div>
+  <div
+    className="absolute inset-0 origin-bottom rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:translate-x-1 group-hover:rotate-12"
+  >
+    <div className="p-4">
+      <img
+        src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Mountain Image 2"
+        className="aspect-4/3 w-full rounded-lg object-cover"
+      />
+    </div>
+  </div>
+
+  <div
+    className="relative rounded-lg bg-white shadow-lg transition duration-150 group-hover:scale-105"
+  >
+    <div className="p-4">
+      <img
+        src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Mountain Image 3"
+        className="aspect-4/3 w-full rounded-lg object-cover"
+      />
+    </div>
+    <div className="px-4 pb-4">
+      <h3 className="font-semibold">Mountain-trip-2024.jpg</h3>
+      <h4 className="text-sm font-medium text-gray-600">2.3MB</h4>
+    </div>
+  </div>
+
+</a>
+<a
+  href="javascript:void(0)"
+  className="group relative mx-auto flex w-full max-w-xs flex-col transition duration-125 active:opacity-75"
+>
+
+  <div
+    className="absolute inset-0 origin-bottom -rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:-translate-x-1 group-hover:-rotate-12"
+  >
+    <div className="p-4">
+      <img
+        src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Mountain Image 1"
+        className="aspect-4/3 w-full rounded-lg object-cover"
+      />
+    </div>
+  </div>
+  <div
+    className="absolute inset-0 origin-bottom rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:translate-x-1 group-hover:rotate-12"
+  >
+    <div className="p-4">
+      <img
+        src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Mountain Image 2"
+        className="aspect-4/3 w-full rounded-lg object-cover"
+      />
+    </div>
+  </div>
+
+  <div
+    className="relative rounded-lg bg-white shadow-lg transition duration-150 group-hover:scale-105"
+  >
+    <div className="p-4">
+      <img
+        src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Mountain Image 3"
+        className="aspect-4/3 w-full rounded-lg object-cover"
+      />
+    </div>
+    <div className="px-4 pb-4">
+      <h3 className="font-semibold">Mountain-trip-2024.jpg</h3>
+      <h4 className="text-sm font-medium text-gray-600">2.3MB</h4>
+    </div>
+  </div>
+
+</a>
+<a
+  href="javascript:void(0)"
+  className="group relative mx-auto flex w-full max-w-xs flex-col transition duration-125 active:opacity-75"
+>
+
+  <div
+    className="absolute inset-0 origin-bottom -rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:-translate-x-1 group-hover:-rotate-12"
+  >
+    <div className="p-4">
+      <img
+        src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Mountain Image 1"
+        className="aspect-4/3 w-full rounded-lg object-cover"
+      />
+    </div>
+  </div>
+  <div
+    className="absolute inset-0 origin-bottom rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:translate-x-1 group-hover:rotate-12"
+  >
+    <div className="p-4">
+      <img
+        src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Mountain Image 2"
+        className="aspect-4/3 w-full rounded-lg object-cover"
+      />
+    </div>
+  </div>
+
+  <div
+    className="relative rounded-lg bg-white shadow-lg transition duration-150 group-hover:scale-105"
+  >
+    <div className="p-4">
+      <img
+        src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Mountain Image 3"
+        className="aspect-4/3 w-full rounded-lg object-cover"
+      />
+    </div>
+    <div className="px-4 pb-4">
+      <h3 className="font-semibold">Mountain-trip-2024.jpg</h3>
+      <h4 className="text-sm font-medium text-gray-600">2.3MB</h4>
+    </div>
+  </div>
+
+</a>
+      </section>
       {/* Hero Section */}
       <section
         className="relative h-[85vh] bg-cover bg-center flex items-center justify-center text-center text-white"
-      > 
-        <div className=" bg-opacity-20 p-10 rounded-xl mx-4 bg-black/30 backdrop-blur-2xl">
+      >
+        <div className=" bg-opacity-20 p-10 rounded-xl mx-4  backdrop-blur-2xl">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -129,7 +266,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-lg mb-8 text-dark-400 font-semibold"
+            className="text-xl mb-8 text-dark-400 font-semibold"
           >
             Explore breathtaking destinations, thrilling adventures, and unforgettable journeys.
           </motion.p>
@@ -144,7 +281,7 @@ export default function HomePage() {
 
       {/* Destinations Grid */}
 <section className="py-16 bg-gray-50 mx-4">
-  <h3 className="text-3xl font-bold text-center mb-10 text-green-500">
+  <h3 className="text-3xl font-bold text-center mb-10 bg-green-200 lg:mx-37 text-green-500 p-4 rounded-2xl">
     Popular Destinations
   </h3>
   {/* <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-6 md:px-16">
@@ -317,7 +454,7 @@ export default function HomePage() {
 </section>
 
       <section>
-        <h1 className="lg:text-7xl text-xl text-center text-green-500 font-bold my-4">Read more on our blog</h1>
+        <h1 className="lg:text-4xl text-xl text-center text-purple-500 mx-10 rounded-2xl p-4 bg-purple-200 font-bold my-4">Read more on our blog</h1>
 <div className="flex justify-center items-center my-10 gap-6 flex-wrap mx-4">        
 <div
   className="relative mx-auto w-full max-w-sm rounded-3xl border border-slate-200 bg-white ring-4 ring-slate-300/25"
@@ -484,22 +621,28 @@ export default function HomePage() {
 
       {/* About Section */}
       <section className="py-20 px-6 md:px-20 bg-white text-center">
-        <h3 className="text-3xl font-bold mb-6 text-green-500">About Visit Kembata</h3>
+        <h3 className="text-4xl font-bold mb-6 text-green-500 font-figtree">🧭 About Us</h3>
         {/* <p className="max-w-3xl mx-auto text-dark-100 leading-relaxed text-lg font-semibold">
           Visit Kembata is your gateway to exploring the world’s most beautiful and remote destinations.
           Whether you crave mountain peaks, deep forests, or desert dunes, our mission is to help you
           connect with nature and find your wild side. Embark on journeys that redefine your limits
           and let your spirit roam free.
         </p> */}
+        <h4 className="text-dark-100 text-3xl font-semibold">Who We Are</h4>
+        <p className="text-dark-400 text-3xl text-justify py-4 font-figtree">Visit Kembata is a local travel agency dedicated to showcasing the hidden beauty of the Kembata Zone and nearby regions.
+
+        Founded by passionate locals, we specialize in authentic cultural experiences, guided nature tours, and personalized travel services. Our mission is simple — to connect people with the vibrant spirit, traditions, and landscapes of our homeland.
+
+        With our team’s deep knowledge of the area, we promise safe, affordable, and unforgettable trips that go beyond the usual tourist paths.</p>
 <div
   className="relative mx-auto flex max-w-7xl flex-col gap-12 px-4 py-16 lg:px-8 lg:py-32"
 >
   <div className="text-center">
-    <h2 className="text-3xl font-extrabold text-blue-600 sm:text-4xl">
-      Boost SEO with our solution.
+    <h2 className="text-2xl font-extrabold text-blue-600 sm:text-4xl font-figtree">
+      💼 Our Services
     </h2>
     <p className="mt-2 text-lg font-medium text-green-500">
-      Unlock the power of search engine optimization and dominate your market.
+      Whether you’re a solo traveler, a family, or a group of adventurers — we’ve got something for you.
     </p>
   </div>
   <div className="grid grid-cols-1 gap-9 md:grid-cols-2 lg:grid-cols-3">
@@ -522,10 +665,9 @@ export default function HomePage() {
           ></path>
         </svg>
       </div>
-      <h4 className="mb-2 font-bold text-gray-950">Keyword Research</h4>
-      <p className="text-sm/relaxed text-gray-600">
-        Discover high-performing keywords to target and improve your search
-        rankings.
+      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🏞️ Cultural Tours</h4>
+      <p className="text-sm/relaxed text-gray-600 font-figtree">
+        Experience Kembata’s traditions, festivals, and local cuisine.
       </p>
     </div>
     <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
@@ -547,10 +689,9 @@ export default function HomePage() {
           ></path>
         </svg>
       </div>
-      <h4 className="mb-2 font-bold text-gray-950">On-Page Optimization</h4>
+      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🏕️ Nature & Adventure Trips</h4>
       <p className="text-sm/relaxed text-gray-600">
-        Optimize your content, meta tags, and HTML structure for better search
-        engine visibility.
+        Explore mountain trails, waterfalls, and scenic viewpoints.
       </p>
     </div>
     <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
@@ -572,10 +713,9 @@ export default function HomePage() {
           ></path>
         </svg>
       </div>
-      <h4 className="mb-2 font-bold text-gray-950">Backlink Analysis</h4>
+      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🏡 Homestay Experiences</h4>
       <p className="text-sm/relaxed text-gray-600">
-        Monitor and analyze your backlink profile to improve your site's
-        authority and rankings.
+        Stay with welcoming local families and feel at home.
       </p>
     </div>
     <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
@@ -597,10 +737,9 @@ export default function HomePage() {
           ></path>
         </svg>
       </div>
-      <h4 className="mb-2 font-bold text-gray-950">Site Speed Optimization</h4>
+      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🚌 Transportation & Guidance</h4>
       <p className="text-sm/relaxed text-gray-600">
-        Improve your website's loading speed for better user experience and
-        search rankings.
+        Reliable local guides and comfortable travel options.
       </p>
     </div>
     <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
