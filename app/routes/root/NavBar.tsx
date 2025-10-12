@@ -13,48 +13,8 @@ const NavBar = ({handleClick}:{handleClick?: () => void}) => {
     }
     // const [menuOpen, setMenuOpen] = useState(false);
   return (
-    // <div>
-    //     <nav className="flex justify-between items-center px-6 md:px-10 py-5 bg-white shadow-md sticky top-0 z-50">
-    //     <h1 className="text-2xl font-bold text-green-700">VisitKemabata</h1>
-
-    //     {/* Desktop Nav */}
-    //     <ul className="hidden md:flex space-x-8 text-lg font-medium">
-    //       {["Home", "Explore", "Blog", "About"].map((item) => (
-    //         <li
-    //           key={item}
-    //           className="hover:text-green-700 cursor-pointer transition-colors duration-200"
-    //         >
-    //           {item}
-    //         </li>
-    //       ))}
-    //     </ul>
-
-    //     {/* Mobile Hamburger */}
-    //     <button
-    //       onClick={() => setMenuOpen(!menuOpen)}
-    //       className="md:hidden text-2xl text-green-700 focus:outline-none"
-    //     >
-    //       {menuOpen ? <FaTimes /> : <FaBars />}
-    //     </button>
-
-    //     {/* Mobile Menu */}
-    //     {menuOpen && (
-    //       <div className="absolute top-[70px] left-0 w-full bg-white shadow-md z-40 py-4">
-    //         <ul className="flex flex-col items-center space-y-4 text-lg font-medium">
-    //           {["Home", "Explore", "Blog", "About"].map((item) => (
-    //             <li
-    //               key={item}
-    //               onClick={() => setMenuOpen(false)}
-    //               className="hover:text-green-700 cursor-pointer transition-colors"
-    //             >
-    //               {item}
-    //             </li>
-    //           ))}
-    //         </ul>
-    //       </div>
-    //     )}
-    //   </nav>
-    // </div>
+    
+    
 
     <section className="nav-items">
             <Link to='/' className="link-logo">

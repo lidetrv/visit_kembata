@@ -9,11 +9,11 @@ const PageLayout = () => {
     <div className='admin-layout'
     >
         <MobileSidebar/>
-        {/* <aside className='w-full max-w-[270] hidden lg:block' >
-            <SidebarComponent width={270} enableGestures={false}>
+         {/* <aside className='hidden lg:flex' >
+            <SidebarComponent width={270} enableGestures={false}> 
                 <NavBar/>
-            </SidebarComponent>
-        </aside> */}
+             </SidebarComponent>
+        </aside>  */}
         <aside className='children'>
             <Outlet/>
         </aside>
