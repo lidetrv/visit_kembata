@@ -169,8 +169,8 @@ const Explore = ({loaderData}: Route.ComponentProps) => {
         </button>
       </div>
       <img
-        src="/public/assets/images/yichalal-2.jpg"
-        alt="Mountain Adventure"
+        src="/assets/images/yichalal-2.jpg"
+        alt="Yichalal Hotel"
         className="aspect-16/9 w-full object-cover"
       />
     </div>
@@ -397,8 +397,8 @@ const Explore = ({loaderData}: Route.ComponentProps) => {
         </button>
       </div>
       <img
-        src="/public/assets/images/aberash.jpg"
-        alt="Mountain Adventure"
+        src="/assets/images/aberash.jpg"
+        alt="Aberash Hotel"
         className="aspect-16/9 w-full object-cover"
       />
     </div>
@@ -626,8 +626,8 @@ const Explore = ({loaderData}: Route.ComponentProps) => {
         </button>
       </div>
       <img
-        src="/public/assets/images/wojo.jpg"
-        alt="Mountain Adventure"
+        src="/assets/images/wojo.jpg"
+        alt="Wojo Hotel"
         className="aspect-16/9 w-full object-cover"
       />
     </div>
