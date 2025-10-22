@@ -143,11 +143,26 @@ export default function Blog() {
             Southern Ethiopia.
           </p>
           <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-green-500 max-w-4xl mx-auto">
-            <img
-              src="/assets/images/kembatamap.png"
-              alt="Map of Kembata Tembaro Zone"
-              className="w-full max-h-96 object-contain bg-white p-4"
-            />
+            <a
+              href="https://www.google.com/maps/place/Kembata+Tembaro+Zone"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/kembatamap.png"
+                alt="Map of Kembata Tembaro Zone"
+                className="w-full max-h-96 object-contain bg-white p-4"
+              />
+            </a>
+          </div>
+          <div className="text-center">
+            {/* <img src="/images/kembata-tembaro-zone.jpg" alt="Kembata Tembaro Zone" className="rounded-lg shadow-lg w-full h-auto mb-3"> */}
+            <a
+              href="https://www.google.com/maps/place/Kembata+Tembaro+Zone"
+              target="_blank"
+              className="text-blue-600 underline hover:text-blue-800"
+            >
+              📍 View on Google Maps
+            </a>
           </div>
         </div>
 
@@ -175,9 +190,7 @@ export default function Blog() {
                 The people are known for their rich cultural traditions,
                 hospitality, and colorful celebrations. The **Kembata language**
                 is widely spoken, and local festivals like{" "}
-                <span className="font-semibold text-green-600">
-                  Fichee-Chambalaalla
-                </span>{" "}
+                <span className="font-semibold text-green-600">Maasala</span>{" "}
                 are central to community life, recognized by **UNESCO** as an
                 intangible cultural heritage.
               </p>

@@ -1,14 +1,4 @@
-// import React from 'react'
-
-// const Homepage = () => {
-//   return (
-//     <div>Homepage</div>
-//   )
-// }
-
-// export default Homepage
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaInstagram,
   FaFacebookF,
@@ -27,6 +17,7 @@ import { cn, formatDate } from "~/lib/utils";
 import { getAllPosts } from "~/appwrite/posts";
 import { getUser } from "~/appwrite/auth";
 import type { Route } from "./+types/Homepage";
+import CardSlider from "../../../components/ui/card-slider";
 
 export const clientLoader = async () => {
   const [user, posts] = await Promise.all([getUser(), getAllPosts(3, 0)]);
@@ -59,6 +50,33 @@ export const clientLoader = async () => {
     }
   ) as any[];
   return { user, allPosts };
+};
+
+const ImageSlider: React.FC<{ images: string[]; interval?: number }> = ({
+  images,
+  interval = 3000,
+}) => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (!images || images.length === 0) return;
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % images.length);
+    }, interval);
+    return () => clearInterval(id);
+  }, [images, interval]);
+
+  if (!images || images.length === 0) return null;
+
+  return (
+    <div className="absolute inset-0 -z-10">
+      <img
+        src={images[index]}
+        alt={`slide-${index}`}
+        className="w-full h-full object-cover rounded-xl"
+      />
+    </div>
+  );
 };
 
 export default function HomePage({ loaderData }: Route.ComponentProps) {
@@ -151,48 +169,18 @@ export default function HomePage({ loaderData }: Route.ComponentProps) {
         </div>
       </section>
 
-      {/* Hero Section */}
-      <section className="relative h-[30vh] bg-cover bg-center flex items-center justify-center text-center text-white">
-        <div className=" bg-opacity-20 p-10 rounded-xl mx-4  backdrop-blur-2xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-2xl md:text-6xl font-bold mb-6 text-dark-100"
-          >
-            Discover Your Next Adventure
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-md mb-8 text-dark-400 font-semibold"
-          >
-            Explore breathtaking destinations, thrilling adventures, and
-            unforgettable journeys.
-          </motion.p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-lg"
-          >
-            Start Exploring
-          </motion.button>
-        </div>
-      </section>
       {/* discover  */}
 
-      {/* Destinations Grid */}
       <section className="py-16 bg-gray-50 mx-4">
         <h3 className="text-3xl font-bold text-center mb-10 bg-green-200 lg:mx-37 text-green-500 p-4 rounded-2xl">
           Popular Destinations
         </h3>
-
-        {/* <!-- Cards Grid --> */}
-        <div className="mx-auto grid w-full max-w-sm grid-cols-1 gap-8 lg:max-w-5xl lg:grid-cols-3 lg:gap-12">
-          {/* <!-- Blog Post Card --> */}
+        {/* The CardSlider component takes the individual cards as children */}
+        <CardSlider>
+          {/* */}
           <a
             href="javascript:void(0)"
-            className="group relative mx-auto block w-full max-w-xs overflow-hidden rounded-lg ring-8 shadow-lg ring-white/50 transition ease-in active:opacity-75"
+            className="group relative block w-full max-w-xs overflow-hidden rounded-lg ring-8 shadow-lg ring-white/50 transition ease-in active:opacity-75"
           >
             <div className="scale-125 transition duration-150 ease-in group-hover:scale-100">
               <img
@@ -211,12 +199,10 @@ export default function HomePage({ loaderData }: Route.ComponentProps) {
               </p>
             </div>
           </a>
-          {/* <!-- END Blog Post Card -->
-
-  <!-- Blog Post Card --> */}
+          {/* */}
           <a
             href="javascript:void(0)"
-            className="group relative mx-auto block w-full max-w-xs overflow-hidden rounded-lg ring-8 shadow-lg ring-white/50 transition ease-in active:opacity-75"
+            className="group relative block w-full max-w-xs overflow-hidden rounded-lg ring-8 shadow-lg ring-white/50 transition ease-in active:opacity-75"
           >
             <div className="scale-125 transition duration-150 ease-in group-hover:scale-100">
               <img
@@ -237,9 +223,10 @@ export default function HomePage({ loaderData }: Route.ComponentProps) {
               </p>
             </div>
           </a>
+          {/* */}
           <a
             href="/blogs"
-            className="group relative mx-auto block w-full max-w-xs overflow-hidden rounded-lg ring-8 shadow-lg ring-white/50 transition ease-in active:opacity-75"
+            className="group relative block w-full max-w-xs overflow-hidden rounded-lg ring-8 shadow-lg ring-white/50 transition ease-in active:opacity-75"
           >
             <div className="scale-125 transition duration-150 ease-in group-hover:scale-100">
               <img
@@ -258,11 +245,11 @@ export default function HomePage({ loaderData }: Route.ComponentProps) {
               </p>
             </div>
           </a>
-          {/* <!-- END Blog Post Card --> */}
-        </div>
-        {/* <!-- END Cards Grid --> */}
+        </CardSlider>
+        {/* */}
       </section>
 
+      {/* {/* this section fetches from the backend */}
       <section>
         <h1 className="lg:text-4xl text-xl text-center text-purple-500 mx-10 rounded-2xl p-4 bg-purple-200 font-bold my-4">
           Read more on our blog

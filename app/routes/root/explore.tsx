@@ -14,6 +14,36 @@ import { motion } from "framer-motion";
 import { homeSidebarItems, user } from "~/constants";
 import { cn } from "~/lib/utils";
 
+// Image slider component
+const ImageSlider = ({
+  images,
+  interval = 3000,
+}: {
+  images: string[];
+  interval?: number;
+}) => {
+  const [current, setCurrent] = useState(0);
+
+  React.useEffect(() => {
+    if (!images || images.length === 0) return;
+    const id = setInterval(() => {
+      setCurrent((c) => (c + 1) % images.length);
+    }, interval);
+    return () => clearInterval(id);
+  }, [images, interval]);
+
+  return (
+    <div className="absolute inset-0 -z-10">
+      <img
+        src={images[current]}
+        alt={`slide-${current}`}
+        className="w-full h-full object-cover transition-opacity duration-700"
+      />
+      <div className="absolute inset-0 bg-black/30" />
+    </div>
+  );
+};
+
 // Helper component for the Footer
 const Footer = () => (
   <footer className="bg-green-700 text-white py-10 text-center">
@@ -174,43 +204,46 @@ export default function Explore() {
           </div>
         </header>
       </section>
-      {/* Header */}
-      <header className="bg-green-600 text-white p-5 text-center shadow-lg">
-        <h1 className="text-3xl font-bold">Explore Our Adventures</h1>
-        <p className="text-sm opacity-90 mt-1">
-          Filter breathtaking journeys by category
-        </p>
-      </header>
-      <article>
-        {/* <h1 className="text-green-500 text-3xl lg:text-9xl font-bold my-10">
-              Visit Kembata
-            </h1> */}
-        <p className="font-semibold text-purple-400 bg-purple-200 px-10 py-4 w-sm rounded-2xl text-xl">
-          Where Culture Meets Nature.
-        </p>
-      </article>
+      {/* Hero Section */}
+      {/* Hero Section */}
+      <section className="relative h-[65vh] bg-cover bg-center text-center text-white m-12">
+        <div className="relative h-[60vh] bg-opacity-20 m-1 p-2 rounded-xl mx-4 backdrop-blur-2xl overflow-hidden text-center">
+          {/* sliding background images (3s interval) */}
+          <ImageSlider
+            images={[
+              "/assets/images/new/d1.jpg",
+              "/assets/images/new/d2.jpg",
+              "/assets/images/new/d3.jpg",
+              "/assets/images/new/h1.jpg",
+              "/assets/images/new/h2.jpg",
+              "/assets/images/new/soso1.jpg",
+            ]}
+            interval={3000}
+          />
 
-      {/* Main Photo & Text Area */}
-      <section className="relative h-[50vh] overflow-hidden">
-        <img
-          src={allDestinations[0].img}
-          alt="Main Explore Image"
-          className="w-full h-full object-cover"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.onerror = null;
-            target.src =
-              "https://placehold.co/1200x600/34D399/ffffff?text=Explore+Header";
-          }}
-        />
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4">
-          <h2 className="text-5xl font-extrabold text-white mb-3 drop-shadow-lg">
-            Wilderness Awaits
-          </h2>
-          <p className="text-xl text-green-200 max-w-2xl text-center">
-            Dive into our curated list of unforgettable trips, from soaring
-            peaks to tranquil lakes. Find your perfect escape.
-          </p>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-2xl md:text-6xl font-bold mb-6 text-white-100"
+          >
+            Discover Your Next Adventure
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-md mb-8 text-white-400 font-semibold"
+          >
+            Explore breathtaking destinations, thrilling adventures, and
+            unforgettable journeys.
+          </motion.p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-lg"
+          >
+            Start Exploring
+          </motion.button>
         </div>
       </section>
 
