@@ -5,7 +5,7 @@ import { cn, getFirstWord } from '~/lib/utils';
 const PostCard = ({id,name,tags,location,price,imageUrl}:TripCardProps) => {
     const path = useLocation();
   return (
-    <Link to={path.pathname === '/' || path.pathname.startsWith('/home') ? `/home/${id}`:`/posts/${id}`} className='trip-card'>
+    <Link to={path.pathname === '/' || path.pathname.startsWith('/home') ? `/home/${id}`: path.pathname.startsWith('/blog') ? `/blog/${id}`:`/posts/${id}`} className='trip-card'>
         <img src={imageUrl} alt={name}/>
         <article>
             <h2>{name}</h2>

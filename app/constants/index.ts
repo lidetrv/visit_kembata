@@ -43,7 +43,7 @@ export const homeSidebarItems = [
   },
   {
     id: 8,
-    icon: "/assets/icons/itinerary.svg",
+    icon: "/assets/icons/question.png",
     label: "About",
     href: "/about",
   },

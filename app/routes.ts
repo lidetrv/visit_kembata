@@ -10,6 +10,11 @@ export default [
     route('posts/create', 'routes/admin/create-post.tsx'),
     route('posts/:postId','routes/admin/post-detail.tsx')]),
     layout('routes/root/page-layout.tsx',[
-        index('routes/root/Homepage.tsx')
+        index('routes/root/Homepage.tsx'),
+        route('blog','routes/root/Blog.tsx'),
+        route('explore','routes/root/Explore.tsx'),
+        route('about', 'routes/root/About.tsx'),
+        route('blog-content','routes/root/BlogContent.tsx'),
+        route('blog/:postId','routes/root/FrontPostDetail.tsx')
     ])
 ] satisfies RouteConfig;

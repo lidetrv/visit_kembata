@@ -1,13 +1,3 @@
-// import React from 'react'
-
-// const Homepage = () => {
-//   return (
-//     <div>Homepage</div>
-//   )
-// }
-
-// export default Homepage
-
 import React, { useState } from "react";
 import { FaInstagram, FaFacebookF, FaTwitter, FaYoutube, FaBars, FaTimes,FaTelegram } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -129,89 +119,6 @@ export default function HomePage({loaderData}: Route.ComponentProps) {
           </div>
         </div>
       </header>
-
-{/* <nav
-  className="relative mx-auto flex w-full max-w-xl flex-col gap-2 rounded-3xl bg-white p-4 ring-8 shadow-sm shadow-slate-500/10 ring-slate-900/5 lg:flex-row lg:justify-center"
->
-  <a
-    href="/"
-    className="group flex items-center space-x-2 rounded-xl bg-slate-100 px-3 py-2 font-medium text-slate-900 lg:justify-center"
-  >
-    <svg
-      className="hi-mini hi-home inline-block size-5 text-indigo-500"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z"
-        clip-rule="evenodd"
-      />
-    </svg>
-    <span>Home</span>
-  </a>
-  <a
-    href="#"
-    className="group flex items-center space-x-2 rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 lg:justify-center"
-  >
-    <svg
-      className="hi-mini hi-briefcase inline-block size-5 text-slate-400 group-hover:text-indigo-500"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M6 3.75A2.75 2.75 0 018.75 1h2.5A2.75 2.75 0 0114 3.75v.443c.572.055 1.14.122 1.706.2C17.053 4.582 18 5.75 18 7.07v3.469c0 1.126-.694 2.191-1.83 2.54-1.952.599-4.024.921-6.17.921s-4.219-.322-6.17-.921C2.694 12.73 2 11.665 2 10.539V7.07c0-1.321.947-2.489 2.294-2.676A41.047 41.047 0 016 4.193V3.75zm6.5 0v.325a41.622 41.622 0 00-5 0V3.75c0-.69.56-1.25 1.25-1.25h2.5c.69 0 1.25.56 1.25 1.25zM10 10a1 1 0 00-1 1v.01a1 1 0 001 1h.01a1 1 0 001-1V11a1 1 0 00-1-1H10z"
-        clip-rule="evenodd"
-      />
-      <path
-        d="M3 15.055v-.684c.126.053.255.1.39.142 2.092.642 4.313.987 6.61.987 2.297 0 4.518-.345 6.61-.987.135-.041.264-.089.39-.142v.684c0 1.347-.985 2.53-2.363 2.686a41.454 41.454 0 01-9.274 0C3.985 17.585 3 16.402 3 15.055z"
-      />
-    </svg>
-    <span>Projects</span>
-  </a>
-  <a
-    href="#"
-    className="group flex items-center space-x-2 rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 lg:justify-center"
-  >
-    <svg
-      className="hi-mini hi-users inline-block size-5 text-slate-400 group-hover:text-indigo-500"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path
-        d="M7 8a3 3 0 100-6 3 3 0 000 6zM14.5 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM1.615 16.428a1.224 1.224 0 01-.569-1.175 6.002 6.002 0 0111.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 017 18a9.953 9.953 0 01-5.385-1.572zM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 00-1.588-3.755 4.502 4.502 0 015.874 2.636.818.818 0 01-.36.98A7.465 7.465 0 0114.5 16z"
-      />
-    </svg>
-    <span>Customers</span>
-  </a>
-  <a
-    href="#"
-    className="group flex items-center space-x-2 rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 lg:justify-center"
-  >
-    <svg
-      className="hi-mini hi-cog-8-tooth inline-block size-5 text-slate-400 group-hover:text-indigo-500"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
-        clip-rule="evenodd"
-      />
-    </svg>
-    <span>Settings</span>
-  </a>
-</nav> */}
-
       </section>
       <section>
         <div className="flex items-center justify-start mx-8 font-bold">
@@ -809,7 +716,7 @@ export default function HomePage({loaderData}: Route.ComponentProps) {
         {/* <h4 className="text-dark-100 text-3xl font-semibold">Who We Are</h4> */}
         <p className="text-dark-400 text-xl text-justify py-4 font-figtree">Visit Kembata is a local travel agency dedicated to showcasing the hidden beauty of the Kembata Zone and nearby regions.
 
-        Founded by passionate locals, we specialize in authentic cultural experiences, guided nature tours, and personalized travel services. Our mission is simple — to connect people with the vibrant spirit, traditions, and landscapes of our homeland.
+        Founded by <span className="text-dark-100 font-bold">Samson Thomas</span>, we specialize in authentic cultural experiences, guided nature tours, and personalized travel services. Our mission is simple — to connect people with the vibrant spirit, traditions, and landscapes of our homeland.
 
         With our team’s deep knowledge of the area, we promise safe, affordable, and unforgettable trips that go beyond the usual tourist paths.</p>
 <div
@@ -828,6 +735,244 @@ export default function HomePage({loaderData}: Route.ComponentProps) {
       <div
         className="mb-4 flex size-12 items-center justify-center rounded-xl bg-blue-100"
       >
+        {/* <svg
+          className="inline-block size-6 text-blue-600"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          ></path>
+        </svg> */}
+        <svg
+  className="inline-block size-6 text-blue-600"
+  fill="none"
+  stroke="currentColor"
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+  strokeWidth={2}
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
+  {/* eyepieces */}
+  <circle cx="8" cy="10" r="3" />
+  <circle cx="16" cy="10" r="3" />
+
+  {/* bridge & body */}
+  <path d="M5 10v5a2 2 0 0 0 2 2h2" />
+  <path d="M19 10v5a2 2 0 0 1-2 2h-2" />
+  <path d="M9 6h6v2H9z" />
+
+  {/* straps / lower detail */}
+  <path d="M4 7v-1a1 1 0 0 1 1-1h2" />
+  <path d="M18 7v-1a1 1 0 0 0-1-1h-2" />
+</svg>
+      </div>
+      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🏞️ Cultural Tours</h4>
+      <p className="text-sm/relaxed text-gray-600 font-figtree">
+        Experience Kembata’s traditions, festivals, and local cuisine.
+      </p>
+    </div>
+    <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
+      <div
+        className="mb-4 flex size-12 items-center justify-center rounded-xl bg-green-100"
+      >
+        {/* <svg
+          className="inline-block size-6 text-green-600"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg> */}
+        <svg
+  className="inline-block size-6 text-green-600"
+  fill="none"
+  stroke="currentColor"
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+  strokeWidth={2}
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  aria-hidden="true"
+>
+  {/* Lock body */}
+  <rect x="5" y="11" width="14" height="10" rx="2" ry="2" />
+  {/* Shackle */}
+  <path d="M7 11V7a5 5 0 0110 0v4" />
+  {/* Keyhole */}
+  <circle cx="12" cy="16" r="1" />
+</svg>
+      </div>
+      <h4 className="mb-2 font-bold text-gray-950">🔒Safe Tours</h4>
+      <p className="text-sm/relaxed text-gray-600">
+      We prioritize your safety and ensure every tour is secure, providing 
+      a worry-free and enjoyable travel experience.
+      </p>
+
+    </div>
+    <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
+      <div
+        className="mb-4 flex size-12 items-center justify-center rounded-xl bg-purple-100"
+      >
+        {/* <svg
+          className="inline-block size-6 text-purple-600"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+          ></path>
+        </svg> */}
+        <svg
+           className="inline-block size-6 text-purple-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+            >
+  {/* Roof */}
+  <path d="M3 11L12 3l9 8" />
+  {/* House base */}
+  <path d="M5 10v10a1 1 0 001 1h12a1 1 0 001-1V10" />
+  {/* Door */}
+  <rect x="10" y="14" width="4" height="6" rx="1" />
+</svg>
+      </div>
+      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🏡 Homestay Experiences</h4>
+      <p className="text-sm/relaxed text-gray-600">
+        Stay with welcoming local families and feel at home.
+      </p>
+    </div>
+    <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
+      <div
+        className="mb-4 flex size-12 items-center justify-center rounded-xl bg-yellow-100"
+      >
+        {/* <svg
+          className="inline-block size-6 text-yellow-600"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          ></path>
+        </svg> */}
+        <svg
+        className="inline-block size-6 text-yellow-600"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+>
+  {/* Bus body */}
+  <rect x="4" y="5" width="16" height="12" rx="2" ry="2" />
+  
+  {/* Front window divider */}
+  <path d="M12 5v12" />
+  
+  {/* Wheels */}
+  <circle cx="8" cy="17" r="1.2" />
+  <circle cx="16" cy="17" r="1.2" />
+  
+  {/* Headlights */}
+  <path d="M4 10h16" />
+</svg>
+
+      </div>
+      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🚌 Transportation & Guidance</h4>
+      <p className="text-sm/relaxed text-gray-600">
+        Reliable local guides and comfortable travel options.
+      </p>
+    </div>
+    <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
+      <div
+        className="mb-4 flex size-12 items-center justify-center rounded-xl bg-green-100"
+      >
+        {/* <svg
+          className="inline-block size-6 text-red-600"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+          ></path>
+        </svg> */}
+            <svg
+            className="inline-block size-6 text-green-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+            >
+  {/* Main mountain peaks */}
+  <path d="M2 20l6-10 4 6 6-8 4 12" />
+  {/* Snow cap on highest peak */}
+  <path d="M12 8l2-3 1 2" />
+</svg>
+
+
+      </div>
+      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🏕️ Nature & Adventure Trips</h4>
+      <p className="text-sm/relaxed text-gray-600">
+        Explore mountain trails, waterfalls, and scenic viewpoints.
+      </p>
+    </div>
+    <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
+      <div
+        className="mb-4 flex size-12 items-center justify-center rounded-xl bg-indigo-100"
+      >
+        {/* <svg
+          className="inline-block size-6 text-indigo-600"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          ></path>
+        </svg> */} 
         <svg
           className="inline-block size-6 text-blue-600"
           fill="none"
@@ -843,132 +988,12 @@ export default function HomePage({loaderData}: Route.ComponentProps) {
           ></path>
         </svg>
       </div>
-      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🏞️ Cultural Tours</h4>
-      <p className="text-sm/relaxed text-gray-600 font-figtree">
-        Experience Kembata’s traditions, festivals, and local cuisine.
-      </p>
-    </div>
-    <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
-      <div
-        className="mb-4 flex size-12 items-center justify-center rounded-xl bg-green-100"
-      >
-        <svg
-          className="inline-block size-6 text-green-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-          ></path>
-        </svg>
-      </div>
-      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🏕️ Nature & Adventure Trips</h4>
+      <h4 className="mb-2 font-bold text-gray-950">🔭Explore Attractions</h4>
       <p className="text-sm/relaxed text-gray-600">
-        Explore mountain trails, waterfalls, and scenic viewpoints.
+      Discover and visit a variety of tourism sites, experiencing the unique 
+      culture, history, and landscapes each destination has to offer.
       </p>
-    </div>
-    <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
-      <div
-        className="mb-4 flex size-12 items-center justify-center rounded-xl bg-purple-100"
-      >
-        <svg
-          className="inline-block size-6 text-purple-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-          ></path>
-        </svg>
-      </div>
-      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🏡 Homestay Experiences</h4>
-      <p className="text-sm/relaxed text-gray-600">
-        Stay with welcoming local families and feel at home.
-      </p>
-    </div>
-    <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
-      <div
-        className="mb-4 flex size-12 items-center justify-center rounded-xl bg-yellow-100"
-      >
-        <svg
-          className="inline-block size-6 text-yellow-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          ></path>
-        </svg>
-      </div>
-      <h4 className="mb-2 font-bold text-gray-950 font-figtree">🚌 Transportation & Guidance</h4>
-      <p className="text-sm/relaxed text-gray-600">
-        Reliable local guides and comfortable travel options.
-      </p>
-    </div>
-    <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
-      <div
-        className="mb-4 flex size-12 items-center justify-center rounded-xl bg-red-100"
-      >
-        <svg
-          className="inline-block size-6 text-red-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-          ></path>
-        </svg>
-      </div>
-      <h4 className="mb-2 font-bold text-gray-950">Competitor Analysis</h4>
-      <p className="text-sm/relaxed text-gray-600">
-        Gain insights into your competitors' strategies and find opportunities
-        to outrank them.
-      </p>
-    </div>
-    <div className="rounded-lg bg-white p-6 ring-8 ring-gray-900/5">
-      <div
-        className="mb-4 flex size-12 items-center justify-center rounded-xl bg-indigo-100"
-      >
-        <svg
-          className="inline-block size-6 text-indigo-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-          ></path>
-        </svg>
-      </div>
-      <h4 className="mb-2 font-bold text-gray-950">SEO Reporting</h4>
-      <p className="text-sm/relaxed text-gray-600">
-        Generate comprehensive reports to track your SEO progress and
-        demonstrate ROI.
-      </p>
+
     </div>
   </div>
 </div>
