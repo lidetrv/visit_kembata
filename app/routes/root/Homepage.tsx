@@ -17,7 +17,6 @@ import { cn, formatDate } from "~/lib/utils";
 import { getAllPosts } from "~/appwrite/posts";
 import { getUser } from "~/appwrite/auth";
 import type { Route } from "./+types/Homepage";
-import Carousel from "./Carousel";
 
 export const clientLoader = async () => {
   const [user, posts] = await Promise.all([getUser(), getAllPosts(3, 0)]);
@@ -51,19 +50,7 @@ export const clientLoader = async () => {
   ) as any[];
   return { user, allPosts };
 };
-// HomePage.tsx (Replace your existing tourCarouselImages array with this)
 
-const tourCarouselImages = [
-  // FIX 1: Path corrected to include 'new/' folder
-  // FIX 2: Alt text simplified to only use the image name
-  { src: "/assets/images/new/h2.jpg", alt: "h2.jpg" },
-  { src: "/assets/images/new/h3.jpg", alt: "h3.jpg" },
-  { src: "/assets/images/new/h4.jpg", alt: "h4.jpg" },
-  { src: "/assets/images/new/h5.jpg", alt: "h5.jpg" },
-  { src: "/assets/images/new/h6.jpg", alt: "h6.jpg" },
-  { src: "/assets/images/new/h7.jpg", alt: "h7.jpg" },
-  { src: "/assets/images/new/h8.jpg", alt: "h8.jpg" },
-];
 export default function HomePage({ loaderData }: Route.ComponentProps) {
   const user = loaderData.user as User | null;
   const { allPosts } = loaderData;
@@ -161,13 +148,119 @@ export default function HomePage({ loaderData }: Route.ComponentProps) {
           <div></div>
         </div>
       </section>
+      <section className="flex justify-center items-center my-10 gap-6 flex-wrap mx-4">
+        <a
+          href="javascript:void(0)"
+          className="group relative mx-auto flex w-full max-w-xs flex-col transition duration-125 active:opacity-75"
+        >
+          <div className="absolute inset-0 origin-bottom -rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:-translate-x-1 group-hover:-rotate-12">
+            <div className="p-4">
+              <img
+                src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Mountain Image 1"
+                className="aspect-4/3 w-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
+          <div className="absolute inset-0 origin-bottom rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:translate-x-1 group-hover:rotate-12">
+            <div className="p-4">
+              <img
+                src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Mountain Image 2"
+                className="aspect-4/3 w-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
 
-      {/* this is where you can put the carousel */}
-      {/* 🏞️ 3D Image Carousel Section: Replaces the static image block */}
-      <section className="w-full bg-gray-50 py-10">
-        <Carousel images={tourCarouselImages} />
+          <div className="relative rounded-lg bg-white shadow-lg transition duration-150 group-hover:scale-105">
+            <div className="p-4">
+              <img
+                src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Mountain Image 3"
+                className="aspect-4/3 w-full rounded-lg object-cover"
+              />
+            </div>
+            <div className="px-4 pb-4">
+              <h3 className="font-semibold">Mountain-trip-2024.jpg</h3>
+              <h4 className="text-sm font-medium text-gray-600">2.3MB</h4>
+            </div>
+          </div>
+        </a>
+        <a
+          href="javascript:void(0)"
+          className="group relative mx-auto flex w-full max-w-xs flex-col transition duration-125 active:opacity-75"
+        >
+          <div className="absolute inset-0 origin-bottom -rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:-translate-x-1 group-hover:-rotate-12">
+            <div className="p-4">
+              <img
+                src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Mountain Image 1"
+                className="aspect-4/3 w-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
+          <div className="absolute inset-0 origin-bottom rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:translate-x-1 group-hover:rotate-12">
+            <div className="p-4">
+              <img
+                src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Mountain Image 2"
+                className="aspect-4/3 w-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="relative rounded-lg bg-white shadow-lg transition duration-150 group-hover:scale-105">
+            <div className="p-4">
+              <img
+                src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Mountain Image 3"
+                className="aspect-4/3 w-full rounded-lg object-cover"
+              />
+            </div>
+            <div className="px-4 pb-4">
+              <h3 className="font-semibold">Mountain-trip-2024.jpg</h3>
+              <h4 className="text-sm font-medium text-gray-600">2.3MB</h4>
+            </div>
+          </div>
+        </a>
+        <a
+          href="javascript:void(0)"
+          className="group relative mx-auto flex w-full max-w-xs flex-col transition duration-125 active:opacity-75"
+        >
+          <div className="absolute inset-0 origin-bottom -rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:-translate-x-1 group-hover:-rotate-12">
+            <div className="p-4">
+              <img
+                src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Mountain Image 1"
+                className="aspect-4/3 w-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
+          <div className="absolute inset-0 origin-bottom rotate-3 rounded-lg bg-white shadow-lg transition duration-150 group-hover:translate-x-1 group-hover:rotate-12">
+            <div className="p-4">
+              <img
+                src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Mountain Image 2"
+                className="aspect-4/3 w-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="relative rounded-lg bg-white shadow-lg transition duration-150 group-hover:scale-105">
+            <div className="p-4">
+              <img
+                src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Mountain Image 3"
+                className="aspect-4/3 w-full rounded-lg object-cover"
+              />
+            </div>
+            <div className="px-4 pb-4">
+              <h3 className="font-semibold">Mountain-trip-2024.jpg</h3>
+              <h4 className="text-sm font-medium text-gray-600">2.3MB</h4>
+            </div>
+          </div>
+        </a>
       </section>
-      {/* 🏞️ End 3D Image Carousel Section */}
       {/* Hero Section */}
       <section className="relative h-[30vh] bg-cover bg-center flex items-center justify-center text-center text-white">
         <div className=" bg-opacity-20 p-10 rounded-xl mx-4  backdrop-blur-2xl">
@@ -333,13 +426,12 @@ export default function HomePage({ loaderData }: Route.ComponentProps) {
           {/* <!-- END Blog Post Card --> */}
         </div>
         {/* <!-- END Cards Grid --> */}
-        {/* this is the div */}
       </section>
       <section>
         <h1 className="lg:text-4xl text-xl text-center text-purple-500 mx-10 rounded-2xl p-4 bg-purple-200 font-bold my-4">
           Read more on our blog
         </h1>
-        <div className="flex justify-center items-center my-10 gap-6 flex-wrap mx-4">
+        <div className="flex">
           {allPosts
             .slice(0, 4)
             .map(
@@ -412,7 +504,7 @@ export default function HomePage({ loaderData }: Route.ComponentProps) {
               )
             )}
         </div>
-        here is
+
         <div className="flex justify-center items-center my-10 gap-6 flex-wrap mx-4">
           <div className="relative mx-auto w-full max-w-sm rounded-3xl border border-slate-200 bg-white ring-4 ring-slate-300/25">
             <div className="flex flex-col gap-4 rounded-xl p-6">
@@ -1163,7 +1255,7 @@ export default function HomePage({ loaderData }: Route.ComponentProps) {
       </section>
 
       {/* Footer */}
-      <footer className=" text-white py-10 text-center glassmorphism">
+      <footer className="bg-gray-300 text-white py-10 text-center">
         {/* <div className="flex justify-center space-x-6 mb-6 text-2xl">
           <FaInstagram className="hover:text-green-300 cursor-pointer transition" />
           <FaFacebookF className="hover:text-green-300 cursor-pointer transition" />
